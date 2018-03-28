@@ -8,7 +8,13 @@
     <title><?=$title?></title>
 </head>
 <body>
+    <?=$this->render('home/header.phtml')?>
     <h1>hello world</h1>
     <h2><?=$content?></h2>
+    <ul>
+        <?php foreach($arr as $row) :?>
+            <li><?=$row['name']?> - <?=$row['email']?></li>
+        <?php endforeach;?>
+    </ul>
 </body>
 </html>
