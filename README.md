@@ -35,8 +35,8 @@ server {
         rewrite     ^/(.*)$     /index.php	last;
     }
 
-	access_log	/data/logs/nginx/access/curr/test.iliubang.cn.log  main;
-	error_log	/data/logs/nginx/nginx_error_test.iliubang.cn.log  error;
+    access_log	/data/logs/nginx/access/curr/test.iliubang.cn.log  main;
+    error_log	/data/logs/nginx/nginx_error_test.iliubang.cn.log  error;
 }
 ```
 
