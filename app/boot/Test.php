@@ -2,9 +2,9 @@
 
 namespace boot;
 
+use handler\Test as T;
 use linger\framework\Application;
 use linger\framework\Bootstrap;
-use handler\Test as T;
 
 class Test implements Bootstrap
 {

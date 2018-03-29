@@ -7,9 +7,11 @@ use handler\Test;
 use linger\framework\Application;
 use linger\framework\Bootstrap;
 
-class Router implements Bootstrap {
+class Router implements Bootstrap
+{
 
-    public function bootstrap(Application $app) {
+    public function bootstrap(Application $app)
+    {
         $app->getRouter()
             ->get('/', Home::class, 'index')
             ->get('/home/@userId:([0-9]+)', Home::class, 'home')
