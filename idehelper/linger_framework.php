@@ -375,6 +375,15 @@ class Request
     {
     }
 
+    /**
+     * @param array $post
+     * @return $this
+     */
+    public function setPost(array $post)
+    {
+
+    }
+
 
     /**
      * @param array $param

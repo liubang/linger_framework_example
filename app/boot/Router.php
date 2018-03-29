@@ -3,6 +3,7 @@
 namespace boot;
 
 use handler\Home;
+use handler\Test;
 use linger\framework\Application;
 use linger\framework\Bootstrap;
 

@@ -24,6 +24,7 @@ require APP_PATH . '/vendor/autoload.php';
 $bootclass = [
     \boot\Session::class,
     \boot\Router::class,
+    \boot\Test::class,
 ];
 $app = new linger\framework\Application(require APP_PATH . '/conf/config.php');
 $app->init($bootclass);
