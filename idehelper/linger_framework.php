@@ -1,4 +1,5 @@
 <?php
+
 namespace linger\framework;
 
 class Application
@@ -6,234 +7,290 @@ class Application
     /**
      * @var Application
      */
-	protected static $_app;
+    protected static $_app;
 
     /**
      * @var Config
      */
-	protected $_config;
+    protected $_config;
 
     /**
      * @var Router
      */
-	protected $_router;
+    protected $_router;
 
     /**
      * @var Request
      */
-	protected $_request;
+    protected $_request;
 
     /**
      * @var Dispatcher
      */
-	protected $_dispatcher;
+    protected $_dispatcher;
 
     /**
      * Application constructor.
      * @param array $config
      */
-	public function __construct(array $config = null) { }
+    public function __construct(array $config = null)
+    {
+    }
 
 
-	public function run() { }
+    public function run()
+    {
+    }
 
     /**
      * @return $this
      */
-	public static function app() { }
+    public static function app()
+    {
+    }
 
     /**
      * @param array $bootarr
      * @return $this
      */
-	public function init(array $bootarr) { }
+    public function init(array $bootarr)
+    {
+    }
 
     /**
      * @return Config
      */
-	public function getConfig() { }
+    public function getConfig()
+    {
+    }
 
     /**
      * @return Router
      */
-	public function getRouter() { }
+    public function getRouter()
+    {
+    }
 
     /**
      * @return $this
      */
-	public function setConfig(Config $config) { }
+    public function setConfig(Config $config)
+    {
+    }
 
     /**
      * @return Dispatcher
      */
-	public function getDispatcher() { }
+    public function getDispatcher()
+    {
+    }
 
     /**
      * @return Request
      */
-	public function getRequest() { }
+    public function getRequest()
+    {
+    }
 
-	public function __destruct() { }
+    public function __destruct()
+    {
+    }
 }
+
 interface Bootstrap
 {
     /**
      * @param Application $application
      * @return mixed
      */
-	public function bootstrap(Application $application);
+    public function bootstrap(Application $application);
 }
+
 class Config
 {
     /**
      * @var Config
      */
-	protected static $_instance;
+    protected static $_instance;
 
     /**
      * Config constructor.
      * @param array $config
      */
-	public function __construct(array $config) { }
+    public function __construct(array $config)
+    {
+    }
 
     /**
      * @param null|string $key
      * @return mixed
      */
-	public function get($key = null) { }
+    public function get($key = null)
+    {
+    }
 
     /**
      * @param string $key
      * @param mixed $value
      * @return bool
      */
-	public function set($key, $value) { }
+    public function set($key, $value)
+    {
+    }
 
-	public function __destruct() { }
+    public function __destruct()
+    {
+    }
 }
+
 abstract class Controller
 {
     /**
      * @var Request
      */
-	protected $_request;
+    protected $_request;
 
     /**
      * @var View
      */
-	protected $_view;
-	private function __construct() { }
-	protected function _init() { }
+    protected $_view;
+
+    private function __construct()
+    {
+    }
+
+    protected function _init()
+    {
+    }
 
     /**
      * @return Request
      */
-	protected function getRequest() { }
+    protected function getRequest()
+    {
+    }
 
     /**
      * @return View
      */
-	protected function getView() { }
+    protected function getView()
+    {
+    }
 }
+
 class Dispatcher
 {
     /**
      * @var Dispatcher
      */
-	protected static $_instance;
+    protected static $_instance;
 
     /**
      * @var Router
      */
-	private $_router;
+    private $_router;
 
     /**
      * @var string
      */
-	private $_module;
+    private $_module;
 
     /**
      * @var Request
      */
-	private $_request;
+    private $_request;
 
     /**
      * @var string
      */
-	private $_controller;
+    private $_controller;
 
     /**
      * @var string
      */
-	private $_action;
-	protected function __construct() { }
+    private $_action;
+
+    protected function __construct()
+    {
+    }
 
     /**
      * @return Request
      */
-	public function getRequest() { }
+    public function getRequest()
+    {
+    }
 
     /**
      * @return RouterRule|false
      */
-	public function findRouter() { }
+    public function findRouter()
+    {
+    }
 }
+
 class Request
 {
     /**
      * @var Request
      */
-	protected static $_instance;
+    protected static $_instance;
 
     /**
      * @var string
      */
-	protected $_method;
+    protected $_method;
 
     /**
      * @var string
      */
-	protected $_uri;
+    protected $_uri;
 
     /**
      * @var array
      */
-	protected $_cookie;
+    protected $_cookie;
 
     /**
      * @var array
      */
-	protected $_query;
+    protected $_query;
 
     /**
      * @var array
      */
-	protected $_param;
+    protected $_param;
 
     /**
      * @var array
      */
-	protected $_post;
+    protected $_post;
 
     /**
      * @var array
      */
-	protected $_files;
+    protected $_files;
 
     /**
      * Request constructor.
      */
-	protected function __construct() { }
+    protected function __construct()
+    {
+    }
 
     /**
      * @return string
      */
-	public function getMethod() { }
+    public function getMethod()
+    {
+    }
 
     /**
      * @return string
      */
-	public function getUri() { }
+    public function getUri()
+    {
+    }
 
     /**
      * @param null $key
@@ -241,7 +298,9 @@ class Request
      * @param callable|null $filter
      * @return mixed
      */
-	public function getQuery($key = null, $default = null, callable $filter = null) { }
+    public function getQuery($key = null, $default = null, callable $filter = null)
+    {
+    }
 
     /**
      * @param null $key
@@ -249,7 +308,9 @@ class Request
      * @param callable|null $filter
      * @return mixed
      */
-	public function getParam($key = null, $default = null, callable $filter = null) { }
+    public function getParam($key = null, $default = null, callable $filter = null)
+    {
+    }
 
     /**
      * @param null $key
@@ -257,72 +318,96 @@ class Request
      * @param callable|null $filter
      * @return mixed
      */
-	public function getPost($key = null, $default = null, callable $filter = null) { }
+    public function getPost($key = null, $default = null, callable $filter = null)
+    {
+    }
 
     /**
      * @param null $key
      * @return mixed
      */
-	public function getCookie($key = null) { }
+    public function getCookie($key = null)
+    {
+    }
 
     /**
      * @return boolean
      */
-	public function isGet() { }
+    public function isGet()
+    {
+    }
 
     /**
      * @return boolean
      */
-	public function isPost() { }
+    public function isPost()
+    {
+    }
 
     /**
      * @return boolean
      */
-	public function isAjax() { }
+    public function isAjax()
+    {
+    }
 
     /**
      * @param string $uri
      * @return $this
      */
-	public function setUri($uri) { }
+    public function setUri($uri)
+    {
+    }
 
     /**
      * @param string $method
      * @return $this
      */
-	public function setMethod($method) { }
+    public function setMethod($method)
+    {
+    }
 
     /**
      * @param array $query
      * @return $this
      */
-	public function setQuery(array $query) { }
+    public function setQuery(array $query)
+    {
+    }
 
 
     /**
      * @param array $param
      * @return $this
      */
-	public function setParam(array $param) { }
+    public function setParam(array $param)
+    {
+    }
 }
+
 class Router
 {
     /**
      * @var Router
      */
-	protected static $_instance;
+    protected static $_instance;
 
     /**
      * @var RouterRule
      */
-	protected $_rules;
-	private function __construct() { }
+    protected $_rules;
+
+    private function __construct()
+    {
+    }
 
     /**
      * @param RouterRule $routerRule
      * @return false|$this
      */
-	public function add(RouterRule $routerRule) { }
+    public function add(RouterRule $routerRule)
+    {
+    }
 
     /**
      * @param string $uri
@@ -330,7 +415,9 @@ class Router
      * @param string $action
      * @return $this
      */
-	public function get($uri, $class, $action) { }
+    public function get($uri, $class, $action)
+    {
+    }
 
     /**
      * @param string $uri
@@ -338,7 +425,9 @@ class Router
      * @param string $action
      * @return $this
      */
-	public function post($uri, $class, $action) { }
+    public function post($uri, $class, $action)
+    {
+    }
 
     /**
      * @param string $uri
@@ -346,7 +435,9 @@ class Router
      * @param string $action
      * @return $this
      */
-	public function put($uri, $class, $action) { }
+    public function put($uri, $class, $action)
+    {
+    }
 
     /**
      * @param string $uri
@@ -354,100 +445,128 @@ class Router
      * @param string $action
      * @return $this
      */
-	public function delete($uri, $class, $action) { }
+    public function delete($uri, $class, $action)
+    {
+    }
 }
+
 class RouterRule
 {
     /**
      * @var string
      */
-	private $_request_method;
+    private $_request_method;
 
     /**
      * @var string
      */
-	private $_uri;
+    private $_uri;
 
     /**
      * @var string
      */
-	private $_class;
+    private $_class;
 
     /**
      * @var string
      */
-	private $_class_method;
+    private $_class_method;
 
     /**
      * RouterRule constructor.
      */
-	public function __construct() { }
+    public function __construct()
+    {
+    }
 
     /**
      * @return string
      */
-	public function getRequestMethod() { }
-
-	/**
-     * @return string
-     */
-	public function getUri() { }
+    public function getRequestMethod()
+    {
+    }
 
     /**
      * @return string
      */
-	public function getClass() { }
+    public function getUri()
+    {
+    }
 
     /**
      * @return string
      */
-	public function getClassMethod() { }
+    public function getClass()
+    {
+    }
+
+    /**
+     * @return string
+     */
+    public function getClassMethod()
+    {
+    }
 }
+
 class View
 {
     /**
      * @var array
      */
-	protected $_vars;
+    protected $_vars;
 
     /**
      * @var string
      */
-	protected $_tpl_dir;
+    protected $_tpl_dir;
 
-	protected function __construct() { }
+    protected function __construct()
+    {
+    }
 
     /**
      * @param string $path
      */
-	public function setScriptPath($path) { }
+    public function setScriptPath($path)
+    {
+    }
 
     /**
      * @return string
      */
-	public function getScriptPath() { }
+    public function getScriptPath()
+    {
+    }
 
     /**
      * @param string $key
      * @param mixed $val
      * @return $this
      */
-	public function assign($key, $val) { }
+    public function assign($key, $val)
+    {
+    }
 
     /**
      * @param string $tpl
      * @return boolean
      */
-	public function display($tpl) { }
+    public function display($tpl)
+    {
+    }
 
     /**
      * @param string $tpl
      * @return string
      */
-	public function render($tpl) { }
+    public function render($tpl)
+    {
+    }
 
     /**
      * @return array
      */
-	public function getVars() { }
+    public function getVars()
+    {
+    }
 }

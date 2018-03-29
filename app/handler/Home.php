@@ -17,6 +17,10 @@ class Home extends Controller
     {
         $this->getView()->assign('title', '这是测试用的')
             ->assign('content', "测试文字")
+            ->assign('arr', [
+                ['name' => 'liubang', 'email' => 'it.liubang@gmail.com'],
+                ['name' => 'zhangsan', 'email' => 'zhangsan@aaa.com'],
+            ])
             ->display('home/index.phtml');
     }
 
