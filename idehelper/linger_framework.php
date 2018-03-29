@@ -298,6 +298,7 @@ class Request
      */
 	public function setQuery(array $query) { }
 
+
     /**
      * @param array $param
      * @return $this

@@ -1,5 +1,7 @@
 <?php
-error_reporting(E_ALL | E_NOTICE);
+error_reporting(32767);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 define('APP_PATH', realpath(__DIR__ . '/../') . '/');
 spl_autoload_register(function ($class) {
     $filename = APP_PATH . 'app/' . str_replace('\\', '/', $class) . '.php';

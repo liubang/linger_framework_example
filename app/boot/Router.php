@@ -13,6 +13,7 @@ class Router implements Bootstrap {
             ->get('/', Home::class, 'index')
             ->get('/home/@userId:([0-9]+)', Home::class, 'home')
             ->get('/list/user.html', Home::class, 'get')
-            ->post('/user', Home::class, 'post');
+            ->post('/user', Home::class, 'post')
+            ->get('/test', Test::class, 'index');
     }
 }
