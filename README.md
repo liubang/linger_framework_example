@@ -1,5 +1,9 @@
 ## linger_framework示例项目
 
+### 开发环境
+
+- php7.x
+
 ### 编译安装linger_framework
 
 ```shell

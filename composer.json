@@ -1,13 +1,14 @@
 {
-    "name": "liubang/test.iliubang.cn",
-    "authors": [
-        {
-            "name": "liubang",
-            "email": "it.liubang@gmail.com"
-        }
-    ],
-    "require": {
-        "illuminate/events": "^5.4",
-        "illuminate/database": "^5.4"
+  "name": "liubang/test.iliubang.cn",
+  "authors": [
+    {
+      "name": "liubang",
+      "email": "it.liubang@gmail.com"
     }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "illuminate/events": "^5.4",
+    "illuminate/database": "^5.4"
+  }
 }
