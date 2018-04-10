@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(0);
+
 echo "<?php\n";
 
 $carr = [
@@ -37,9 +39,9 @@ foreach ($carr as $name) {
 
         $inters = $clazz->getInterfaces();
         if (!empty($inters)) {
-            $str =  "implements ";
+            $str =  " implements ";
             foreach ($inters as $inter) {
-                $str .= $inter->getName() . ",";
+                $str .= '\\' . $inter->getName() . ",";
             }
             echo rtrim($str, ',');
         }

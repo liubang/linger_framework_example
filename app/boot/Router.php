@@ -3,7 +3,6 @@
 namespace boot;
 
 use handler\Home;
-use handler\Test;
 use linger\framework\Application;
 use linger\framework\Bootstrap;
 
@@ -14,9 +13,10 @@ class Router implements Bootstrap
     {
         $app->getRouter()
             ->get('/', Home::class, 'index')
+            ->get('/index.html', Home::class, 'index')
             ->get('/home/@userId:([0-9]+)', Home::class, 'home')
             ->get('/list/user.html', Home::class, 'get')
-            ->post('/user', Home::class, 'post')
-            ->get('/test', Test::class, 'index');
+            ->get('/list/user/', Home::class, 'get')
+            ->post('/user', Home::class, 'post');
     }
 }

@@ -41,12 +41,16 @@ class Home extends Controller
             'name' => $name,
             'age'  => $age,
         ]);
-        echo \json_encode(['status' => 1, 'code' => '0', 'data' => $id]);
+        $this->getResponse()
+            ->json(['status' => 1, 'code' => '0', 'data' => $id])
+            ->send();
     }
 
     public function get()
     {
         $model = new UserModel();
-        echo \json_encode($model->getUserInfo());
+        $this->getResponse()
+            ->json($model->getUserInfo())
+            ->send();
     }
 }

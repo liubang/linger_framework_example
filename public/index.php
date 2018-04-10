@@ -10,9 +10,8 @@ spl_autoload_register(function ($class) {
     }
 });
 
-set_exception_handler(function (Exception $e) {
-    echo $e->getMessage(), PHP_EOL;
-    echo $e->getTraceAsString();
+set_exception_handler(function ($e) {
+    var_dump($e);
 });
 
 set_error_handler(function ($err) {
@@ -24,7 +23,6 @@ require APP_PATH . '/vendor/autoload.php';
 $bootclass = [
     \boot\Session::class,
     \boot\Router::class,
-    \boot\Test::class,
 ];
 $app = new linger\framework\Application(require APP_PATH . '/conf/config.php');
 $app->init($bootclass);
