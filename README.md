@@ -31,7 +31,7 @@ server {
     index           index.php index.html;
 
     location ~ \.php$ {
-        fastcgi_pass   php56;
+        fastcgi_pass   php72;
         include        fastcgi.conf;
     }
 

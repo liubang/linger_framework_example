@@ -23,7 +23,10 @@ class Home extends Controller
                 ['name' => 'zhangsan', 'email' => 'zhangsan@aaa.com'],
             ])
             ->display('home/index.phtml');
-        \sleep(1);
+
+        \file_put_contents("/tmp/test.log", '[start] - ' . \microtime(true) . \PHP_EOL, \FILE_APPEND);
+        \sleep(2);
+        \file_put_contents("/tmp/test.log", '[end] - ' . \microtime(true) . \PHP_EOL, \FILE_APPEND);
     }
 
     public function home()
