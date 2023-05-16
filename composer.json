@@ -8,7 +8,12 @@
   ],
   "require": {
     "php": ">=7.0",
-    "illuminate/events": "^5.4",
-    "illuminate/database": "^5.4"
+    "illuminate/events": "^6.20.26",
+    "illuminate/database": "^6.20.26"
+  },
+  "config": {
+    "allow-plugins": {
+      "kylekatarnls/update-helper": true
+    }
   }
 }
